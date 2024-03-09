@@ -14,13 +14,11 @@ public class BinarySearchTree implements BinaryTree  {
 			return new Node(value);
 		} else if (value < node.value) {
 			node.left = add(value, node.left);
-			return node;
 		} else if (value > node.value) {
 			node.right = add(value, node.right);
-			return node;
 		}
 		
-		return null;
+		return node;
 	}
 	
 	public boolean contains(int value) {
