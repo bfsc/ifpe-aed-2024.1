@@ -10,7 +10,7 @@ public class Main {
 		bst.add(7);
 		bst.add(5);
 		
-		bst.remove(8);
+		bst.remove(3);
 		
 		bst.preOrderTraversal();
 	}

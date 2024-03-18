@@ -50,15 +50,12 @@ public class BinarySearchTree implements BinaryTree  {
 					return null;
 				} else if (node.left != null && node.right != null) {
 					Node inOrderPredecessor = node.left;
-					while (inOrderPredecessor != null) {
-						if (inOrderPredecessor.right == null) {
-							break;
-						}
+					while (inOrderPredecessor.right != null) {
 						inOrderPredecessor = inOrderPredecessor.right;
 					}
-					
 					node.value = inOrderPredecessor.value;
-					return remove(inOrderPredecessor.value, inOrderPredecessor);
+					node.left = remove(inOrderPredecessor.value, node.left);
+					return node;
 				} else {
 					return node.left == null ? node.right : node.left;
 				}
